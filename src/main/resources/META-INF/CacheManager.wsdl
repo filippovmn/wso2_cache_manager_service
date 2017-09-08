@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions targetNamespace="http://ru/example/wso2/cache/CacheManager" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ru/example/wso2/cache/CacheManager" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://ru/example/wso2/cache/CacheManager">
+      <xsd:element name="putValue">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cacheIdent" type="xsd:string"/>
+            <xsd:element name="key" type="xsd:string"/>
+            <xsd:element name="value" type="xsd:string"/>
+            <xsd:element name="TTL" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="putValueResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getValue">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cacheIdent" type="xsd:string"/>
+            <xsd:element name="key" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getValueResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="removeKey">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cacheIdent" type="xsd:string"/>
+            <xsd:element name="key" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="removeKeyResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="removeCollection">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cacheIdent" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="removeCollectionResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getCollectionsList">
+      </xsd:element>
+      <xsd:element name="getCollectionsListResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="collection">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="name" type="xsd:string"/>
+                  <xsd:element name="itemsCount" type="xsd:int"/>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="clearCollection">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="cacheIdent" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="clearCollectionResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="command">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="command">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element maxOccurs="unbounded" minOccurs="0" name="parameter">
+                    <xsd:complexType>
+                      <xsd:attribute name="name"/>
+                      <xsd:attribute name="value"/>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+                <xsd:attribute name="name"/>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="commandResult">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="getCollectionsListResult">
+    <part name="getCollectionsListResult" element="tns:getCollectionsListResult">
+    </part>
+  </message>
+  <message name="removeCollectionResult">
+    <part name="removeCollectionResult" element="tns:removeCollectionResult">
+    </part>
+  </message>
+  <message name="command">
+    <part name="command" element="tns:command">
+    </part>
+  </message>
+  <message name="removeKeyResult">
+    <part name="removeKeyResult" element="tns:removeKeyResult">
+    </part>
+  </message>
+  <message name="removeCollection">
+    <part name="removeCollection" element="tns:removeCollection">
+    </part>
+  </message>
+  <message name="clearCollectionResult">
+    <part name="clearCollectionResult" element="tns:clearCollectionResult">
+    </part>
+  </message>
+  <message name="getValueResult">
+    <part name="getValueResult" element="tns:getValueResult">
+    </part>
+  </message>
+  <message name="clearCollection">
+    <part name="clearCollection" element="tns:clearCollection">
+    </part>
+  </message>
+  <message name="commandResult">
+    <part name="commandResult" element="tns:commandResult">
+    </part>
+  </message>
+  <message name="putValue">
+    <part name="putValue" element="tns:putValue">
+    </part>
+  </message>
+  <message name="removeKey">
+    <part name="removeKey" element="tns:removeKey">
+    </part>
+  </message>
+  <message name="getCollectionsList">
+    <part name="getCollectionsList" element="tns:getCollectionsList">
+    </part>
+  </message>
+  <message name="getValue">
+    <part name="getValue" element="tns:getValue">
+    </part>
+  </message>
+  <message name="putValueResult">
+    <part name="putValueResult" element="tns:putValueResult">
+    </part>
+  </message>
+  <portType name="CacheManager">
+    <operation name="putValue">
+      <input message="tns:putValue">
+    </input>
+      <output message="tns:putValueResult">
+    </output>
+    </operation>
+    <operation name="getValue">
+      <input message="tns:getValue">
+    </input>
+      <output message="tns:getValueResult">
+    </output>
+    </operation>
+    <operation name="removeKey">
+      <input message="tns:removeKey">
+    </input>
+      <output message="tns:removeKeyResult">
+    </output>
+    </operation>
+    <operation name="removeCollection">
+      <input message="tns:removeCollection">
+    </input>
+      <output message="tns:removeCollectionResult">
+    </output>
+    </operation>
+    <operation name="getCollectionsList">
+      <input message="tns:getCollectionsList">
+    </input>
+      <output message="tns:getCollectionsListResult">
+    </output>
+    </operation>
+    <operation name="clearCollection">
+      <input message="tns:clearCollection">
+    </input>
+      <output message="tns:clearCollectionResult">
+    </output>
+    </operation>
+    <operation name="command">
+      <input message="tns:command">
+    </input>
+      <output message="tns:commandResult">
+    </output>
+    </operation>
+  </portType>
+  <binding name="CacheManagerSOAP11Binding" type="tns:CacheManager">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="putValue">
+      <soap:operation soapAction="http://ru/example/wso2/cache/CacheManager/putValue" style="document"/>
+      <input>
+        <soap:body parts="putValue" use="literal"/>
+      </input>
+      <output>
+        <soap:body parts="putValueResult" use="literal"/>
+      </output>
+    </operation>
+    <operation name="getValue">
+      <soap:operation soapAction="http://ru/example/wso2/cache/CacheManager/getValue" style="document"/>
+      <input>
+        <soap:body parts="getValue" use="literal"/>
+      </input>
+      <output>
+        <soap:body parts="getValueResult" use="literal"/>
+      </output>
+    </operation>
+    <operation name="removeKey">
+      <soap:operation soapAction="http://ru/example/wso2/cache/CacheManager/removeKey" style="document"/>
+      <input>
+        <soap:body parts="removeKey" use="literal"/>
+      </input>
+      <output>
+        <soap:body parts="removeKeyResult" use="literal"/>
+      </output>
+    </operation>
+    <operation name="removeCollection">
+      <soap:operation soapAction="http://ru/example/wso2/cache/CacheManager/removeCollection" style="document"/>
+      <input>
+        <soap:body parts="removeCollection" use="literal"/>
+      </input>
+      <output>
+        <soap:body parts="removeCollectionResult" use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCollectionsList">
+      <soap:operation soapAction="http://ru/example/wso2/cache/CacheManager/getCollectionsList" style="document"/>
+      <input>
+        <soap:body parts="getCollectionsList" use="literal"/>
+      </input>
+      <output>
+        <soap:body parts="getCollectionsListResult" use="literal"/>
+      </output>
+    </operation>
+    <operation name="clearCollection">
+      <soap:operation soapAction="http://ru/example/wso2/cache/CacheManager/clearCollection" style="document"/>
+      <input>
+        <soap:body parts="clearCollection" use="literal"/>
+      </input>
+      <output>
+        <soap:body parts="clearCollectionResult" use="literal"/>
+      </output>
+    </operation>
+    <operation name="command">
+      <soap:operation soapAction="http://ru/example/wso2/cache/CacheManager/command" style="document"/>
+      <input>
+        <soap:body parts="command" use="literal"/>
+      </input>
+      <output>
+        <soap:body parts="commandResult" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CacheManager">
+    <port name="CacheManagerSOAP11" binding="tns:CacheManagerSOAP11Binding">
+      <soap:address location="http://www.example.com"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.6.1-wso2v14  Built on : Jul 25, 2015 (11:19:54 IST) -->
+<serviceGroup name="cache">
+   <service name="CacheManager" scope="application"
+		class="ru.example.wso2.cache.api.CacheManagerSkeleton">
+      <messageReceivers>
+         <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out"
+                          class="org.apache.axis2.receivers.RawXMLINOutMessageReceiver"/>
+      </messageReceivers>
+      <parameter name="ServiceClass">ru.example.wso2.cache.api.CacheManagerSkeleton</parameter>
+      <parameter name="useOriginalwsdl">true</parameter>
+      <parameter name="modifyUserWSDLPortAddress">true</parameter>
+      <transports>
+			<transport>http</transport>
+			<transport>https</transport>
+			<transport>local</transport>
+		</transports>
+      <operation name="getCollectionsList"
+                 mep="http://www.w3.org/ns/wsdl/in-out"
+                 namespace="http://api.svyaznoy.ru/CacheManager">
+         <actionMapping>http://api.svyaznoy.ru/CacheManager/getCollectionsList</actionMapping>
+         <outputActionMapping>http://api.svyaznoy.ru/CacheManager/CacheManager/getCollectionsListResponse</outputActionMapping>
+      </operation>
+      <operation name="putValue"
+                 mep="http://www.w3.org/ns/wsdl/in-out"
+                 namespace="http://api.svyaznoy.ru/CacheManager">
+         <actionMapping>http://api.svyaznoy.ru/CacheManager/putValue</actionMapping>
+         <outputActionMapping>http://api.svyaznoy.ru/CacheManager/CacheManager/putValueResponse</outputActionMapping>
+      </operation>
+      <operation name="removeCollection"
+                 mep="http://www.w3.org/ns/wsdl/in-out"
+                 namespace="http://api.svyaznoy.ru/CacheManager">
+         <actionMapping>http://api.svyaznoy.ru/CacheManager/removeCollection</actionMapping>
+         <outputActionMapping>http://api.svyaznoy.ru/CacheManager/CacheManager/removeCollectionResponse</outputActionMapping>
+      </operation>
+      <operation name="getValue"
+                 mep="http://www.w3.org/ns/wsdl/in-out"
+                 namespace="http://api.svyaznoy.ru/CacheManager">
+         <actionMapping>http://api.svyaznoy.ru/CacheManager/getValue</actionMapping>
+         <outputActionMapping>http://api.svyaznoy.ru/CacheManager/CacheManager/getValueResponse</outputActionMapping>
+      </operation>
+      <operation name="clearCollection"
+                 mep="http://www.w3.org/ns/wsdl/in-out"
+                 namespace="http://api.svyaznoy.ru/CacheManager">
+         <actionMapping>http://api.svyaznoy.ru/CacheManager/clearCollection</actionMapping>
+         <outputActionMapping>http://api.svyaznoy.ru/CacheManager/CacheManager/clearCollectionResponse</outputActionMapping>
+      </operation>
+      <operation name="removeKey"
+                 mep="http://www.w3.org/ns/wsdl/in-out"
+                 namespace="http://api.svyaznoy.ru/CacheManager">
+         <actionMapping>http://api.svyaznoy.ru/CacheManager/removeKey</actionMapping>
+         <outputActionMapping>http://api.svyaznoy.ru/CacheManager/CacheManager/removeKeyResponse</outputActionMapping>
+      </operation>
+      <operation name="command"
+                 mep="http://www.w3.org/ns/wsdl/in-out"
+                 namespace="http://api.svyaznoy.ru/CacheManager">
+         <actionMapping>http://api.svyaznoy.ru/CacheManager/command</actionMapping>
+         <outputActionMapping>http://api.svyaznoy.ru/CacheManager/CacheManager/commandResponse</outputActionMapping>
+      </operation>
+   </service>
+</serviceGroup>
